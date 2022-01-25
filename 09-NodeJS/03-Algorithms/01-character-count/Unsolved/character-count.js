@@ -2,5 +2,11 @@
 
 var characterCount = function(str) {
     let strObj = {}
-    str.split('');
+    let strArr = str.split('');
+    for (let i = 0; i < strArr.length; i++) {
+        
+        
+    }
+    console.log(strObj);
+    return strObj
 };
