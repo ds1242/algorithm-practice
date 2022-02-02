@@ -4,5 +4,25 @@
 var isAnagram = function(strA, strB) {
     if(strA.length !== strB.length) {
         return false;
+    };
+
+    let aLetterMap = {};
+    let bLetterMap = {};
+    
+    for (let i = 0; i < strA.length; i++) {
+        let aLetter = strA[i];
+        let bLetter = strB[i];
+
+        aLetterMap[aLetter] = (aLetterMap[aLetter] || 0) + 1;
+        bLetterMap[bLetter] = (bLetterMap[bLetter] || 0) + 1;
+        console.log(aLetterMap)
+        
     }
+    for (var key in aLetterMap) {
+        if (aLetterMap[key] !== bLetterMap[key]) {
+          return false;
+        }
+    }
+    return true;
+
 };
