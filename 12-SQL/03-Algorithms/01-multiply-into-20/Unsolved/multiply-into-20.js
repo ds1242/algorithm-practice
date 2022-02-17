@@ -1,14 +1,28 @@
 // Write code to create a function that accepts an array of unique numbers
 // If any two numbers in the array add up to 20, return true, else return false
+
+
 // loop through the array selecting an element
 // take an element of the array
-// multiply by every other element in 
+// multiply by every other element
+// if one set = 20
+// return true
+// else false
 
 var multiplyInto20 = function(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        const element = array[i];
+    let output = false;
+    for (let i = 0; i <= arr.length; i++) {
+        const element = arr[i];
+        for (let j = arr[i + 1]; j <= arr.length; j++) {
+            const element2 = arr[j];
+            console.log(element * element2)
+            if(element * element2 == 20) {
+                output = true;
+            }
+        }
         
     }
+    return output;
 
 };
 
