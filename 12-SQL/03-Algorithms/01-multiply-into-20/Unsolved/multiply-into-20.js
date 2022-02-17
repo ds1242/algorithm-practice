@@ -10,20 +10,33 @@
 // else false
 
 var multiplyInto20 = function(arr) {
-    let output = false;
-    for (let i = 0; i <= arr.length; i++) {
-        const element = arr[i];
-        for (let j = arr[i + 1]; j <= arr.length; j++) {
-            const element2 = arr[j];
-            console.log(element * element2)
-            if(element * element2 == 20) {
-                output = true;
-            }
+    // let output = false;
+    // for (let i = 0; i <= arr.length; i++) {
+    //     const element = arr[i];
+    //     for (let j = arr[i + 1]; j <= arr.length; j++) {
+    //         const element2 = arr[j];
+    //         console.log(element * element2)
+    //         if(element * element2 == 20) {
+    //             output = true;
+    //         }
+    //     }
+        
+    // }
+    // return output;
+    let numMap = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        const currentNum = arr[i];
+
+        let neededNumber = 20 / currentNum;
+        if(numMap[neededNumber]) {
+            return true;
+        } else {
+            numMap[currentNum] = true;
         }
         
     }
-    return output;
-
+    return false;
 };
 
 
