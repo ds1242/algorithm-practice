@@ -13,9 +13,10 @@ var zeroesAndOnes = function(str) {
             oneCount++;
         }        
     };
-    if(zeroCount == oneCount) {
-        return true;
-    } else {
-        return false;
-    }
+    // if(zeroCount == oneCount) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+    return zeroCount == oneCount
 };
