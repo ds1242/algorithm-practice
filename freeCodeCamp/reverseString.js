@@ -1,7 +1,7 @@
 function reverseString(str) {
     let strArr = str.split('');
     let newArr = []
-    for(let i = str.length; i > 0; i--) {
+    for(let i = 0; i < str.length; i++) {
       newArr.unshift(str[i]);
     }
     // console.log(newArr);
