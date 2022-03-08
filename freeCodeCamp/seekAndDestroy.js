@@ -1,17 +1,14 @@
 function destroyer(arr) {
-    const newArr = [];
-    let outputArr = arr[0];
-    // console.log(outputArr);
-    for(let i = 1; i < arr.length; i++){
-      let currentVal = arr[i];
-      for(let j = 0; j < outputArr.length; j++) {
-        if(outputArr[j] === currentVal) {
-          outputArr = outputArr.splice(i, 1);
+    let valsToRemove = Object.values(arguments).slice(1);
+  
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < valsToRemove.length; j++) {
+        if (arr[i] === valsToRemove[j]) {
+          delete arr[i];
         }
       }
     }
-    console.log(outputArr);
-    return arr;
+    return arr.filter(item => item !== null);
   }
   
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
