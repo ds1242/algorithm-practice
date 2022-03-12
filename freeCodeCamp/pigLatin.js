@@ -1,17 +1,20 @@
 function translatePigLatin(str) {
     let vowelRegex = /[aeiou]/gi;
-    let consonatRegex = /[(?![aeiou])[a-z]]/gi;
+    let pigLatin = '';
   
-    if(consonantRegex.test(str)) {
+    if(str[0].match(vowelRegex)) {
       str.slice(1);
-      str = str + 'ay';
-    } 
-    if(vowelRegex.test(str)) {
-      str.slice(1);
-      str = str + 'way';
+      pigLatin = str + 'way';
+    } else if (str.match(vowelRegex) === null) {
+      pigLatin = str + "ay";
+    } else {
+      let vowelIndice = str.indexOf(str.match(vowelRegex)[0]);
+  
+      pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + "ay";
     }
   
-    return str;
+    return pigLatin;
   }
+  
   
   translatePigLatin("consonant");
