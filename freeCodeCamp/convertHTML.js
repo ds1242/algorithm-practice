@@ -19,7 +19,7 @@ function convertHTML(str) {
           strArr[i] = "&apos;";
           break;
     }
-    return str;
+    return strArr.join('');
     }
   }
   
